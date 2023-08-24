@@ -11,12 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         tools:targetApi="31">
-
         <activity
-        android:name=".Recycler2.recycle2"
-        android:exported="true"/>
-        <activity
-            android:name=".Recycle3.Folder_RecyclerView"
+            android:name=".Kotlin.Kotlin_Assignment1"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Recycler2.recycle2"
+            android:exported="true" />
+        <activity
+            android:name=".Recycle3.Folder_RecyclerView"
+            android:exported="true"/>
         <activity
             android:name=".RecyclerView.RecyclerViewActivity"
             android:exported="true" />
