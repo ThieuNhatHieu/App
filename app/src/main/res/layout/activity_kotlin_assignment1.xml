@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".Kotlin.Kotlin_Assignment1">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:title="Cá nhân hóa"
+        android:id="@+id/toolbar"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DBDBDB"
+        android:layout_marginTop="1dp"
+        android:id="@+id/Divider"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageAvatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/ic_avatar" />
+
+            <TextView
+                android:id="@+id/Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="40dp"
+                android:layout_toEndOf="@+id/imageAvatar"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Thiệu Nhật Hiếu"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/District"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Name"
+                android:layout_marginLeft="25dp"
+                android:layout_toEndOf="@id/imageAvatar"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Công dân thành phố"
+                android:textColor="#EB856A"
+                android:textSize="15dp"
+                android:drawablePadding="4dp"
+                app:drawableStartCompat="@drawable/ic_iconavatar" />
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/inFo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="350dp"
+                android:fontFamily="@font/roboto_bold"
+                android:paddingTop="20dp"
+                android:text="Các thông tin các nhân chính xác giúp chúng tôi mang lại cho bạn những thông tin thú vị chính xác theo đúng thông tin của bạn."
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints"
+                android:text="@string/full_name_titile"
+                android:textSize="20dp"
+                android:id="@+id/HoTen"
+                app:layout_constraintTop_toBottomOf="@+id/inFo"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.095"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintTop_toBottomOf="@+id/HoTen"
+                android:layout_marginTop="10dp"
+                android:id="@+id/edtName"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Nguyễn Văn A"
+                    android:id="@+id/edtName1"
+                    android:layout_marginLeft="30dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints"
+                android:text="@string/date_title"
+                android:textSize="20dp"
+                android:id="@+id/NgaySinh"
+                app:layout_constraintTop_toBottomOf="@+id/edtName"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.095"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintTop_toBottomOf="@+id/NgaySinh"
+                android:layout_marginTop="10dp"
+                android:id="@+id/edtNgaySinh"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:id="@+id/edtNgaySinh1"
+                    android:drawableEnd="@drawable/baseline_calendar_today_24"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints"
+                android:text="@string/phone_title"
+                android:textSize="20dp"
+                android:id="@+id/SDT"
+                app:layout_constraintTop_toBottomOf="@+id/edtName"
+                app:layout_constraintStart_toEndOf="@+id/NgaySinh"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="100dp"
+                app:layout_constraintHorizontal_bias="0.095"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintTop_toBottomOf="@+id/SDT"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toEndOf="@id/edtNgaySinh"
+                android:id="@+id/edtSDT"
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtSDT1"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:inputType="phone" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints"
+                android:text="@string/email_title"
+                android:textSize="20dp"
+                android:id="@+id/email"
+                app:layout_constraintTop_toBottomOf="@+id/edtNgaySinh"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.095"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintTop_toBottomOf="@+id/email"
+                android:layout_marginTop="10dp"
+                android:id="@+id/edtEmail"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:id="@+id/edtEmail1"
+                    android:inputType="textEmailAddress"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints"
+                android:text="@string/identity_card_title"
+                android:textSize="20dp"
+                android:id="@+id/cmt"
+                app:layout_constraintTop_toBottomOf="@+id/edtEmail"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.095"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintTop_toBottomOf="@+id/cmt"
+                android:layout_marginTop="10dp"
+                android:id="@+id/edtCmt"
+                app:counterEnabled="true"
+                app:counterMaxLength="12"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:id="@+id/edtCmt1"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cập nhật thông tin"
+        android:fontFamily="@font/roboto_bold"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/btnConfirm"
+        android:background="@drawable/bg_button_enable"/>
+
+</LinearLayout>
+
