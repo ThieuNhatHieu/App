@@ -5,4 +5,5 @@
     <string name="phone_title">Số ĐT<font color="#E40000">*</font></string>
     <string name="email_title">Email<font color="#E40000">*</font></string>
     <string name="identity_card_title">Số CMT<font color="#E40000">*</font></string>
+    <string name="chat_title">Chats</string>
 </resources>

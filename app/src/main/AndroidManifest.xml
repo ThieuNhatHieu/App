@@ -12,23 +12,27 @@
         android:theme="@style/Theme.App"
         tools:targetApi="31">
         <activity
-            android:name=".Kotlin.Kotlin_Assignment1"
+            android:name=".Kotlin_bai1.Chat"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+        <activity
+            android:name=".Kotlin.Kotlin_Assignment1"
+            android:exported="true" />
         <activity
             android:name=".Recycler2.recycle2"
             android:exported="true" />
         <activity
             android:name=".Recycle3.Folder_RecyclerView"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".RecyclerView.RecyclerViewActivity"
-            android:exported="true" />
+            android:exported="true"/> >
+
         <activity
             android:name=".MainActivity"
             android:exported="true" />
