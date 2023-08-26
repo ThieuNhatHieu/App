@@ -4,5 +4,9 @@
         <item name="android:textSize">40dp</item>
     </style>
 
+    <style name="SearchTitleStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">40dp</item>
+    </style>
+
 
 </resources>

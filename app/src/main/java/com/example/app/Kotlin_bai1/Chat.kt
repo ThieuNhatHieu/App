@@ -3,6 +3,7 @@ package com.example.app.Kotlin_bai1
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app.R
@@ -16,7 +17,6 @@ class Chat : AppCompatActivity() {
         adapter.onClickItem = {
             Toast.makeText(this, "${it.imgChat}_${it.name}_${it.content}", Toast.LENGTH_LONG).show()
         }
-        rcChat.setLayoutManager(LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false))
         rcChat.adapter = adapter
     }
 
