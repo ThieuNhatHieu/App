@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Kotlin_Bai3.Add_Folder">
+
+    <include layout="@layout/layout_add"
+        android:id="@+id/toolbaradd"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/toolbaradd"
+        android:layout_marginTop="20dp"
+        android:text="Nhập tên thư mục"
+        android:id="@+id/Add_edtName"
+        android:fontFamily="@font/roboto_bold"
+        android:background="@drawable/shape_edittext"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/Add_edtName"
+        android:layout_marginTop="10dp"
+        android:text="Nhập mô tả thư mục"
+        android:id="@+id/Add_edtContent"
+        android:fontFamily="@font/roboto_bold"
+        android:background="@drawable/shape_edittext"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
+
+</RelativeLayout>

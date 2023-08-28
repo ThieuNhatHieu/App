@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:id="@+id/imgBack"
+        android:src="@drawable/vector__1_"
+        android:layout_marginStart="10dp"
+        android:paddingTop="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quản lý thư mục"
+        android:textSize="15dp"
+        android:id="@+id/tvTitle"
+        android:layout_marginLeft="160dp"
+        android:paddingTop="10dp"
+        android:fontFamily="@font/roboto_bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thêm"
+        android:id="@+id/tvInsert"
+        android:textSize="15dp"
+        android:paddingTop="10dp"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="#007AFF"
+        android:layout_alignParentEnd="true"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/Divider"
+        android:background="#DBDBDB"
+        android:layout_below="@+id/imgBack"
+        android:layout_marginTop="10dp"/>
+
+
+</RelativeLayout>

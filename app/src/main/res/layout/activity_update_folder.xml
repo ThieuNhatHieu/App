@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Kotlin_Bai3.Add_Folder">
+
+    <include layout="@layout/layout_update"
+        android:id="@+id/toolbaradd"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/toolbaradd"
+        android:layout_marginTop="20dp"
+        android:text="Tổng hợp tin tức thời sự"
+        android:id="@+id/Update_edtName"
+        android:fontFamily="@font/roboto_bold"
+        android:background="@drawable/shape_edittext"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/Update_edtName"
+        android:layout_marginTop="10dp"
+        android:text="Tổng hợp tin tức thời sự nóng hổi nhất, của tất cả các báo nổi nhất hiện nay"
+        android:id="@+id/Update_edtContent"
+        android:fontFamily="@font/roboto_bold"
+        android:background="@drawable/shape_edittext"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
+
+</RelativeLayout>
