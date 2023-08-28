@@ -12,6 +12,15 @@
         android:theme="@style/Theme.App"
         tools:targetApi="31">
         <activity
+            android:name=".SharePreferences.SharePre"
+            android:exported="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
             android:name=".Kotlin_Bai3.Update_Folder"
             android:exported="false" />
         <activity
@@ -19,13 +28,9 @@
             android:exported="true" />
         <activity
             android:name=".Kotlin_Bai3.kotlinfolder"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="true"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
         <activity
             android:name=".Kotlin_bai2.Dog"
             android:exported="true" />
