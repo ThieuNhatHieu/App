@@ -8,18 +8,29 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".SharePreferences.SharePre"
+            android:name=".Kotlin_Bai4.Edit_Student"
+            android:exported="true" />
+        <activity
+            android:name=".Kotlin_Bai4.Add_Student"
+            android:exported="true" />
+        <activity
+            android:name=".Kotlin_Bai4.Students"
             android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity
+            android:name=".SharePreferences.SharePre"
+            android:exported="true"/>
         <activity
             android:name=".Kotlin_Bai3.Update_Folder"
             android:exported="false" />
@@ -28,9 +39,7 @@
             android:exported="true" />
         <activity
             android:name=".Kotlin_Bai3.kotlinfolder"
-            android:exported="true"/>
-
-
+            android:exported="true" />
         <activity
             android:name=".Kotlin_bai2.Dog"
             android:exported="true" />

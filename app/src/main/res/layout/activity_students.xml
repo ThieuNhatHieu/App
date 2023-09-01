@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Kotlin_Bai4.Students">
+
+    <include layout="@layout/layout_toolbar_student"
+        android:id="@+id/idToolbarStudent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgAdd"
+        android:src="@drawable/vector_add"
+        android:layout_marginTop="55dp"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/AddStudent"
+        android:text="Thêm sinh viên mới"
+        android:textColor="#1F9FFC"
+        android:textSize="20dp"
+        android:layout_toEndOf="@+id/imgAdd"
+        android:paddingTop="65dp"
+        android:layout_marginLeft="15dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="80dp"
+        android:id="@+id/rcStudent"
+        android:layout_below="@+id/imgAdd"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

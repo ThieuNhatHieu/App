@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Kotlin_Bai4.Add_Student">
+
+    <include layout="@layout/layout_edit_student"
+        android:id="@+id/editToobar"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/edtNameStudent1"
+        android:background="@drawable/shape_edittext"
+        android:layout_marginTop="20dp"
+        android:text="Nhập tên sinh viên"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/edtAddressStudent1"
+        android:background="@drawable/shape_edittext"
+        android:layout_marginTop="20dp"
+        android:text="Nhập địa chỉ"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/edtPhoneStudent1"
+        android:background="@drawable/shape_edittext"
+        android:layout_marginTop="20dp"
+        android:text="Nhập số điện thoại"
+        android:inputType="phone"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnEdit"
+        android:text="Lưu"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"/>
+</LinearLayout>
