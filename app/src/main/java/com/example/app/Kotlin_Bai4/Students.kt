@@ -1,14 +1,18 @@
 package com.example.app.Kotlin_Bai4
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app.R
+import kotlinx.coroutines.launch
 
 class Students : AppCompatActivity() {
 
@@ -32,16 +36,22 @@ class Students : AppCompatActivity() {
     private var img_remove: ImageView? = null
     private var studentlist : ArrayList<Student> = ArrayList()
     private var studentAdapter: StudentAdapter? = null
+    private var img_avartar: ImageView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_students)
         val rcStudent = findViewById<RecyclerView>(R.id.rcStudent)
+        img_avartar = findViewById(R.id.img_avt)
         imgAdd = findViewById(R.id.imgAdd)
         img_remove = findViewById(R.id.img_remove)
         studentDao = AppRoomDatabase.getDatabase(this).studentDao()
         studentlist = (studentDao?.getAllStudent() as? ArrayList<Student>) ?: ArrayList()
         studentAdapter = StudentAdapter(studentlist)
         rcStudent?.adapter = studentAdapter
+
+        if (img_remove == null) {
+            Log.e("MyActivity", "imgRemove is null") // Log lỗi nếu imgRemove bị null
+        }
 
         val startForResult1 = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
             if (result.resultCode == Activity.RESULT_OK) {
@@ -62,26 +72,36 @@ class Students : AppCompatActivity() {
             startForResult.launch(intent)
         }
 
-        img_remove?.setOnClickListener {
-            // Thực hiện xử lý xóa sinh viên đã chọn tại đây
-            val selectedStudent = studentAdapter?.getSelectedStudent() // Lấy sinh viên đã chọn từ adapter
 
-            if (selectedStudent != null) {
-                studentDao?.deleteStudent(studentId = selectedStudent.id) // Xóa sinh viên từ cơ sở dữ liệu
-                studentlist.remove(selectedStudent) // Xóa sinh viên khỏi danh sách hiển thị
-                studentAdapter?.clearSelectedStudent() // Xóa thông tin sinh viên đã chọn trong adapter
-                studentAdapter?.notifyDataSetChanged() // Cập nhật giao diện
+        studentAdapter?.OnItemClick = { student, position ->
+            // Thực hiện xử lý chuyển đến trang Edit_Student ở đây
+            // Nhưng kiểm tra nếu position tương ứng với img_remove thì không chuyển trang
+                val intent = Intent(this, Edit_Student::class.java)
+                intent.putExtra("student", student)
+                startForResult1.launch(intent)
+        }
+
+
+        studentAdapter?.setActioDelete {
+            val builder = AlertDialog.Builder(this)
+            builder.setMessage("bạn có chắc chắn xóa không")
+            builder.setPositiveButton("YES"){p0, p1 ->
+                lifecycleScope.launch{
+                       studentDao?.deleteStudent(it)
+                        updateData()
+                    }
+                    p0.dismiss()
+                }
+                builder.setNegativeButton("NO"){p0, p1->
+                    p0.dismiss()
+                }
+                val  dialog = builder.create()
+                dialog.show()
             }
+
+
         }
 
-
-
-        studentAdapter?.OnItemClick = {student, position ->
-            val intent  = Intent(this, Edit_Student::class.java)
-            intent.putExtra("student", student)
-            startForResult1.launch(intent)
-        }
-    }
 
     private fun updateData() {
         studentlist = studentDao?.getAllStudent() as ArrayList<Student>

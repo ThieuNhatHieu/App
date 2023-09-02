@@ -14,9 +14,6 @@ interface StudentDao {
     @Update
     fun update(student: Student)
 
-    @Query("DELETE FROM student")
-    fun deleteAll()
-
-    @Query("DELETE FROM student WHERE id = :studentId")
-    fun deleteStudent(studentId: Long)
+    @Delete
+    fun deleteStudent(student: Student)
 }
